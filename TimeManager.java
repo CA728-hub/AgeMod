@@ -29,23 +29,23 @@ public class TimeManager {
         int currentDaysLived = PlayerAgingMod.getPlayerAge(playerUUID);
         PlayerAgingMod.setPlayerAge(playerUUID, currentDaysLived + 1);
 
-        // ✅ Increase day count
+        // Increase day count
         currentDay++;
         dayOfWeek = (dayOfWeek + 1) % DAYS.length; // Cycle through weekdays
 
-        // ✅ Check if the month needs to change
+        // Check if the month needs to change
         if (currentDay > DAYS_IN_MONTH[currentMonth]) {
             currentDay = 1; // Reset day
             currentMonth++; // Move to next month
 
-            // ✅ Check if the year needs to change
+            // Check if the year needs to change
             if (currentMonth >= MONTHS.length) {
                 currentMonth = 0; // Reset to first month
                 currentYear++; // Increase year
             }
         }
 
-        // ✅ Notify player
+        // Notify player
         player.sendMessage(new TextComponentString("New Day: " + getCurrentDate()));
     }
 
