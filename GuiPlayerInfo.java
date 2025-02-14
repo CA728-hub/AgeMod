@@ -45,13 +45,13 @@ public class GuiPlayerInfo extends GuiScreen {
         }
 
         if (!showCalendar) {
-            // ✅ Display player stats when NOT in calendar mode
+            // Display player stats when NOT in calendar mode
             drawString(fontRenderer, "Name: " + player.getName(), 20, 50, 0xFFFFFF);
             drawString(fontRenderer, "Time Lived: " + daysLived + " Days", 20, 70, 0xFFFFFF);
             drawString(fontRenderer, "Real Years Converted: " + realYears + " Years", 20, 90, 0xFFFFFF);
             drawString(fontRenderer, "Growth Stage: " + growthStage, 20, 110, 0xFFFFFF);
         } else {
-            // ✅ Draw the calendar date when toggled ON
+            // Draw the calendar date when toggled ON
             String currentDate = TimeManager.getCurrentDate();
             drawCenteredString(fontRenderer, "Calendar Date:", width / 2, 50, 0xFFFFFF);
             drawCenteredString(fontRenderer, currentDate, width / 2, 70, 0xFFFF55);
