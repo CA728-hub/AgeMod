@@ -15,7 +15,7 @@ public class PlayerTickHandler {
     private static final Map<UUID, Integer> playerAges = new ConcurrentHashMap<>();
     private static final int TICKS_PER_DAY = 24000;
 
-    // ✅ Instead of onPlayerLoggedIn, we check active players every world tick
+    // Instead of onPlayerLoggedIn, the check is for active players every world tick
     @SubscribeEvent
     public void onWorldTick(TickEvent.WorldTickEvent event) {
         if (event.phase == TickEvent.Phase.END && !event.world.isRemote) {
@@ -41,7 +41,7 @@ public class PlayerTickHandler {
         }
     }
 
-    // ✅ Instead of PlayerLoggedOutEvent, we clean up inactive players every server tick
+    // Instead of PlayerLoggedOutEvent, we clean up inactive players every server tick
     @SubscribeEvent
     public void onServerTick(TickEvent.ServerTickEvent event) {
         if (event.phase == TickEvent.Phase.END) {
